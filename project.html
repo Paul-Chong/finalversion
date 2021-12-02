@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+     crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Project Page</title>
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <img class=tmlogo src="img/tmlogo.png" />
+        <div class="logo_name">TicketMaster</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+       <a href="#">
+         <i class='bx bx-book' ></i>
+         <span class="links_name">Projects</span>
+       </a>
+       <span class="tooltip">Project</span>
+     </li>
+    </ul>
+  </div>
+  <section class="home-section">
+      <div class="text">Your Projects</div>
+      <div class="container">
+        <h1 class="center"> Create your project here</h1>
+        <div class="flex" id="submitprojcontainer">
+                <input type="text" id="ptitle" placeholder="Enter project">
+                <button id = "submitprojectbtn" onclick="addProject()"><i class="fa fa-plus" aria-hidden="true"></i> Submit</button>
+        </div>
+        <div class="ProjectTable" style=" margin: 5px; display: inline-block;">
+          <table>
+            <thead>
+              <th style="border-top-left-radius:15px">ProjectID</th>
+              <th>Project Title</th>
+              <th>Status</th>
+              <th>Project Creator</th>
+              <th style="border-top-right-radius: 15px">Functions</th>
+            </thead>
+            <tbody id="tbody1"></tbody>
+          </table>
+        </div>
+      </div>
+  </section>
+
+  <!-- Edit Project Modal -->
+  <!-- <div class="modal-edit-project" class="modal">
+    <div class="modal-content">
+      <h4>Edit Project</h4>
+      <form id="edit-project-form">
+        <p> <small>Project Title</small> </p>
+        <div class="input-field">
+          <input type="text" id="edit-ptitle" required>
+        </div>
+        <p> <small>Project Status</small> </p>
+        <div class="input-field">
+          <input type="text" id="edit-pstatus" required>
+        </div>
+        <button>Submit</button>
+      </form>
+    </div>
+  </div> -->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+  <script src="scripts/script.js"></script>
+
+  <!-- This is for the sandwich dropdown thing top maximize and minimize the side bar-->
+  <script>
+  let sidebar = document.querySelector(".sidebar");
+  let closeBtn = document.querySelector("#btn");
+  let searchBtn = document.querySelector(".bx-search");
+
+  closeBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("open");
+    menuBtnChange();
+  });
+
+  </script>
+</body>
+</html>

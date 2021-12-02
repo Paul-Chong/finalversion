@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <title>Tickets, please</title>
+</head>
+
+<body onload="GetAllTickets()">
+    <div class="app">
+        <!-- Main -->
+        <main class="main">
+            <!-- Header -->
+            <header class="header">
+                <div>
+                    <h1 id="header-title" class="header-title"></h1>
+                    <h1 id="subheader-title" class="subheader-title"></h1>
+                    <div class="currently-viewing" data-currently-viewing>You are currently viewing tickets for this project.</div>
+                </div>
+
+                <!-- Create Ticket Form -->
+                <form class="create-ticket-form" data-new-ticket-form>
+                    <!-- Added more input fields for tickets and added ID's for reference from functions - MTO -->
+                    <div class="form-control" id="ticket-form">
+                      <input type="text" id="ttitle" data-new-ticket-input placeholder="Enter Ticket" required>
+                      <input type="text" id="tdesc" data-new-ticket-input placeholder="Enter Ticket Description" required>
+                      <input type="date" id="tdeadline" data-new-ticket-input placeholder="Enter Ticket Deadline" required>
+                    </div>
+                    <!-- Added ID to button for reference - MTO -->
+                    <button class="ticketbtn" id="createtbtn" onclick="addTicket()">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Add Ticket
+                    </button>
+                </form>
+            </header>
+
+            <!-- Database Table - MTO -->
+            <section class="databasetable">
+              <div class="TestZone">
+                <div class="TicketTable" style="margin: 5px; display: inline-block;">
+                  <!-- Back to Project Page -->
+                  <button type="button" id="goBack" class="gobackbtn" onclick="GoBackToProjectPage()">Back to Projects</button>
+                  <table class="tickettable">
+                    <thead>
+                      <th style="border-top-left-radius: 15px">Ticket ID</th>
+                      <th style="padding-right: 260px">Ticket Title</th>
+                      <th style="padding-right: 260px">Ticket Description</th>
+                      <th>Ticket Deadline</th>
+                      <th>Ticket Status</th>
+                      <th style="border-top-right-radius: 15px">Ticket Creator</th>
+                    </thead>
+                    <tbody id="tbody2"></tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+
+    <!-- changed from main.js to script.js to see if it would still work sharing JS files -->
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
