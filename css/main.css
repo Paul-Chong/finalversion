@@ -85,7 +85,13 @@ td{
   border-radius: 15px;
   margin-bottom: 0px;
   margin-right: 450px;
+  transition-duration: 0.4s;
+}
 
+
+.ticketbtn:hover{
+  background-color: #ebb1b1;
+  color: rgb(255, 255, 255);
 }
 
 .gobackbtn{
@@ -99,6 +105,13 @@ td{
     width: 200px;
     margin-left: 30px;
     margin-bottom: 10px;
+    transition-duration: 0.4s;
+}
+
+
+.gobackbtn:hover{
+  background-color: #ebb1b1;
+  color: rgb(255, 255, 255);
 }
 
 .btn:hover {

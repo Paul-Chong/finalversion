@@ -292,7 +292,13 @@ th{
   width: 100%;
   border-collapse: separate;
   display: inline-block;
-  
+  transition-duration: 0.4s;
+}
+
+
+.functionbtn:hover{
+  background-color: #ffffff;
+  color: #ee8e8e;
 }
 
 input{
